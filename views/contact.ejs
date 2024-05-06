@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EaselPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/PixiPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+    <link rel="stylesheet" href="/css/desktop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <script>
+        gsap.registerPlugin(Flip,ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin,EaselPlugin,PixiPlugin,TextPlugin,RoughEase,ExpoScaleEase,SlowMo,CustomEase)
+        
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.from('.con-card', {
+                scrollTrigger: {
+                    trigger: '.con-card',
+                    toggleActions: "restart none none none"
+                },
+                opacity: 0,
+                duration: 1,
+                x: -50,
+                stagger: 0.25
+            });
+        });
+    </script>
+    <title>Cash Ford</title>
+</head>
+<body>
+    <header>
+        <div class="padding">
+            <a href="/">Home</a>
+            <a href="/#about">About Us</a>
+            <a href="/#product">Solutions</a>
+            <a href="/contact">Contact</a>
+            <a class="header-img" href="https://www.cashfort.com.br/"><img src="/images/brazil.png" alt=""></a>
+        </div>
+    </header>
+    <main>
+        <div class="container first contact">
+            <div class="padding">
+                <h1>Contact Us</h1>
+            </div>
+            <img src="https://www.cashfort.com.br/app/img/slideimg.jpeg" alt="">
+        </div>
+        <div class="container second contact">
+            <div class="padding contact">
+                <div class="con">
+                    <div class="con-card">
+                        <div class="info">
+                            <h2>Brazil</h2>
+                            <p>E-mail: atendimento@cashfort.com.br</p>
+                            <p>Phone: +55 11 93482-9447</p>
+                        </div>
+                        <img src="/images/brazil-banner.png" alt="">
+                    </div>
+                    <div class="con-card">
+                        <div class="info">
+                            <h2>United States</h2>
+                            <p>E-mail: atendimento@cashfort.com.br</p>
+                            <p>Phone: +1 999 999 9999</p>
+                        </div>
+                        <img src="/images/US-banner.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
