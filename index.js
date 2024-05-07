@@ -15,6 +15,10 @@ app.get('/contact', (req, res) => {
     res.render('contact');
 });
 
+app.get('/products', (req, res) => {
+    res.render('product');
+});
+
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
