@@ -5,7 +5,14 @@
     <div class="links">
         <a href="/">Home</a>
         <a href="/#about">About Us</a>
-        <a href="/products">Products</a>
+        <div class="dropdown">
+            <a href="/products">Products</a>
+            <div class="dropdown-content">
+                <% marcas.forEach((e)=>{ %>
+                    <a href="/brand/<%= e %>"><%= e %></a>
+                <% }) %>
+            </div>
+        </div>
         <a href="/#product">Solutions</a>
         <a href="/contact">Contact</a>
     </div>

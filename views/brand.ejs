@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("partials/head.ejs") %>
+</head>
+<body>
+    <header>
+        <%- include ("partials/header.ejs") %>
+    </header>
+    <main>
+        <div class="container first contact">
+            <div class="padding">
+                <h1><%= itens[0].Marca %></h1>
+            </div>
+            <img src="https://www.cashfort.com.br/app/img/slideimg.jpeg" alt="">
+        </div>
+        <div class="container second itens">
+            <div class="padding itens">
+                <%itens.forEach(item=>{%>
+                    <a class="item-card" href="/product/<%= item.name %>">
+                        <div class="img-container">
+                            <img src="<%= item.foto %>" alt="">
+                        </div>
+                        <span class="name"><%= item.name.replaceAll('-',' ') %></span>
+                        <span class="price">$ <%= Math.ceil(item.price/5) - 0.01 %></span>
+                    </a>
+                <%})%>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <%- include ("partials/footer.ejs") %>
+    </footer>
+</body>
+</html>

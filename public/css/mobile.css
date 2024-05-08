@@ -36,12 +36,6 @@ header .logo{
     justify-content: center;
     align-items: center;
 }
-header .links{
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 header a:hover{
     color: red;
     transition: 150ms ease-in-out;
@@ -51,6 +45,34 @@ header a:hover{
 }
 header .padding{
     flex-direction: column;
+}
+header .links{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
+}
+header .dropdown{
+    display: relative;
+    position: relative;
+    display: inline-block;
+    margin: 7.5px;
+}
+header .dropdown-content{
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.47);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.6px);
+    -webkit-backdrop-filter: blur(12.6px);
+    padding: 15px;
+    width: 200px;
+    flex-direction: column;
+    z-index: 10;
+}
+header .dropdown:hover .dropdown-content {
+    display: flex;
+    position: absolute;
 }
 .container{
     display: flex;
