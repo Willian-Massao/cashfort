@@ -21,7 +21,7 @@
                         <div class="stock sec">In stock</div>
                         <div class="value sec">
                             <p>From</p>
-                            <h1>$ <%= item.price %></h1>
+                            <h1>$ <%= Math.ceil(item.price/5) - 0.01 %></h1>
                         </div>
                         <a class="buttons" href="<%= item.url %>" target="_blank">See more!</a>
                         <div class="sec compatibility">
