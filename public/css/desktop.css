@@ -374,4 +374,10 @@ footer .footer-sec{
 .item-card .img-container img{
     max-width: 100%;
     max-height: 100%;
+    transition: 200ms ease-in-out;
+}
+.item-card:hover{
+    outline: 1px solid #ee4617;
+    box-shadow: 0 0 5px 3px #ee4617;
+    transform: scale(0.95);
 }
