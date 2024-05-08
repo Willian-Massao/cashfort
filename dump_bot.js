@@ -36,6 +36,7 @@ async function checkStock(url){
 
     console.log('\nChecking stock for: ' + url);
     let price = $('#preco_atual b').text().replace('R$ ', '');
+    let fotos = $('.cloud-zoom').attr('href');
     let marca = $('.lista-espc').text().trim().replaceAll('\t', '').replaceAll('\n', ':').replaceAll(':::::::', '\n').replaceAll(':::','').replaceAll('\n:','').replace('Funciona com Computador','').replace('Funciona com Celular','').replace('Código Aberto','').replace('Suporta Staking','');
     marca = marca.split('\n')
     for(let idx in marca){
@@ -47,8 +48,10 @@ async function checkStock(url){
         marca[idx] = marca[idx].split(':');
         item += `"${marca[idx][0]}" : "${marca[idx][1]}",`;
     }
+    item += `"foto" : "${fotos}",`
+    item += `"url" : "${url}",`
     item += `"price" : "${price.replace('.', '').replace(',', '.')}",`
-    item += `"name": "${url.split('/')[url.split('/').length-1].replaceAll('-',' ')}"}`;
+    item += `"name": "${url.split('/')[url.split('/').length-1]}"}`;
     resjson.push(JSON.parse(item));
 }
 
@@ -56,7 +59,7 @@ async function doAll(){
     for(let idx in urls){
         await checkStock(urls[idx]);
     }
-    console.log(resjson);
+    console.log(JSON.stringify(resjson));
 }
 doAll();
 

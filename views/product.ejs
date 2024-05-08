@@ -10,7 +10,7 @@
     <main>
         <div class="container first product">
             <div class="padding product">  
-                <h1>Nome do produto</h1>
+                <h1><%= item.name.replaceAll('-',' ') %></h1>
             </div>
             <img src="https://www.cashfort.com.br/app/img/slideimg.jpeg" alt="">
         </div>
@@ -21,9 +21,9 @@
                         <div class="stock sec">In stock</div>
                         <div class="value sec">
                             <p>From</p>
-                            <h1>$ 1.000,00</h1>
+                            <h1>$ <%= item.price %></h1>
                         </div>
-                        <a class="buttons" href="/link-para-o-item">See more!</a>
+                        <a class="buttons" href="<%= item.url %>" target="_blank">See more!</a>
                         <div class="sec compatibility">
                             <div class="compa">
                                 <div class="icon">
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Brand</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item.Marca %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -40,25 +40,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Compatibility</p>
-                                    <p>qualquercoisa</p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/computador.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Works on computer</p>
-                                    <p>qualquercoisa</p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/phone.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Works on smartphone</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item.Compatibilidade %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -67,7 +49,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Supported currencies</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item["Moedas Suportadas"] %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -76,25 +58,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Supported blockchains</p>
-                                    <p>qualquercoisa</p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/codigo.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Open Source</p>
-                                    <p>qualquercoisa</p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/staking.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Staking supported</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item["Blockchains Suportadas"] %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -103,7 +67,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Connectivity</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item.Conectividade %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -112,7 +76,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Weight</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item.Peso %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -121,7 +85,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Size</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item.Tamanho %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -130,7 +94,7 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Battery</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item.Bateria %></p>
                                 </div>
                             </div>
                             <div class="compa">
@@ -139,14 +103,14 @@
                                 </div>
                                 <div class="value">
                                     <p class="title">Handling</p>
-                                    <p>qualquercoisa</p>
+                                    <p><%= item.Manuseio %></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="image">
-                    <img src="/src/Ledger Stax 2.png" alt="hero">
+                    <img src="<%= item.foto %>" alt="hero">
                 </div>
         </div>
     </main>
