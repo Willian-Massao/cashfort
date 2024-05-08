@@ -73,6 +73,15 @@
                 x: -50,
                 stagger: 0.25
             });
+            gsap.from('.item-card', {
+                scrollTrigger: {
+                    trigger: '.item-card',
+                    toggleActions: "restart none none none"
+                },
+                opacity: 0,
+                duration: 1,
+                stagger: 0.10
+            });
         });
     </script>
     <title>Cash Fort</title>
