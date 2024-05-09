@@ -364,6 +364,9 @@ main{
 .container.first.product{
     height: 250px;
 }
+.container.second .padding.product{
+    flex-direction: column-reverse;
+}
 .padding.product .content{
     justify-content: start;
     align-items: start;
@@ -402,7 +405,7 @@ main{
     margin-bottom: 25px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 25px;
+    grid-gap: 45px;
 }
 .sec .compa{
     height: 38px;
