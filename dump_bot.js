@@ -24,7 +24,6 @@ const urls = [
     'https://www.cashfort.com.br/yubico/security-key-nfc-usb-c-yubico-p35',
     'https://www.cashfort.com.br/acessorios/ellipal-mnemonics-metal-p31',
     'https://www.cashfort.com.br/acessorios/cabo-otg-dcent-2-em-1-p38',
-    'https://www.cashfort.com.br/acessorios/seedfort-proteja-suas-palavras-sementes-p41',
     'https://www.cashfort.com.br/acessorios/case-safepal-s1-p42'
 ]
 let resjson = [];

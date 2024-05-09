@@ -5,6 +5,7 @@ body{
     font-family: "Nunito Sans", sans-serif;
     color: white;
 }
+
 html {
     scroll-behavior: smooth;
   }
@@ -40,6 +41,7 @@ header .logo{
 }
 header .padding{
     justify-content: space-between;
+    z-index: 10;
 }
 header .links{
     display: flex;
@@ -95,7 +97,7 @@ header .dropdown:hover .dropdown-content {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 1100px;
+    width: 100%;
     height: 100%;
 }
 .container.first.product{
@@ -114,7 +116,62 @@ header .dropdown:hover .dropdown-content {
 }
 .content p{
     font-size: 20px;
-}.content{
+}
+.first .content  h1{
+    text-align: center;
+}
+.first .content p{
+    text-align: center;
+}
+.container.second .padding .content{
+    width: calc(40% - 60px);
+    padding: 30px;
+}
+.container.second .padding .image{
+    width: 60%;
+}
+.container.third .padding .content{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1100px;
+    height: 100%;
+}
+.container.third .carrosel{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.container.third p{
+    width: calc(100% - 500px);
+}
+.container.third .carrosel .img-container{
+    position: absolute;
+    width: 450px;
+    height: 450px;
+}
+.container.third .carrosel img{
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+.img-container.first{
+    scale: 1.05;
+    z-index: 2;
+}
+.img-container.second{
+    scale: 0.95;
+    z-index: 1;
+    filter: blur(4px);
+}
+.container.forth .padding .image{
+    width: 450px;
+    height: 450px;
+}
+.content{
     width: 550px;
     height: 450px;
     display: flex;
@@ -141,12 +198,13 @@ header .dropdown:hover .dropdown-content {
     width: 350px;
     height: 450px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    overflow: hidden;
 }
 .image img{
-    max-width: 80%;
-    max-height: 80%;
+    width: fit-content;
+    height: 100%;
 }
 main{
     display: flex;
@@ -159,12 +217,13 @@ main{
     align-items: center;
 }
 .part .logo{
-    width: 20%;
-    height: 100%;
+    min-width: 225px;
+    width: 225px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    scroll-snap-align: center;
 }
 .part .logo p{
     font-size: larger;
@@ -173,12 +232,20 @@ main{
 .logo img{
     max-width: 80%;
     max-height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .partners{
-    display: flex;
-    justify-content: space-evenly;
+    display: inline-flex;
+    justify-content: start;
     align-items: start;
     flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 1100px;
+    scroll-snap-type: x mandatory;
 }
 .container#about{
     background-color: #000000;
@@ -189,6 +256,9 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.contact.padding{
+    width: 1100px;
 }
 .container.first.contact{
     height: 320px;
@@ -325,7 +395,7 @@ footer{
     background-color: black;
     height: 350px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
 }
@@ -336,7 +406,6 @@ footer .footer-sec{
     justify-content: center;
     align-items: start;
     flex-direction: column;
-    margin-left: 150px;
     z-index: 10;
 }
 .footer-sec ul{
@@ -406,4 +475,8 @@ footer .footer-sec{
 }
 .item-card:hover img{
     transform: scale(1.05);
+}
+.footer-sec a{
+    text-decoration: none;
+    color: white;
 }

@@ -14,13 +14,36 @@
                     <h1 class="anime anime-start">Keep your money without being tracked</h1>
                     <p class="anime anime-start">We offer excellent opportunities to do more with your cryptocurrencies.</p>
                 </div>
-                <div class="image anime-start">
-                    <img src="/images/cyber.png" alt="hero">
-                </div>
             </div>
             <img src="https://www.cashfort.com.br/app/img/slideimg.jpeg" alt="">
         </div>
         <div class="container second">
+            <div class="padding">
+                <div class="content">
+                    <h1 class="anime anime-resale">About Us</h1>
+                    <p class="anime anime-resale">Cash Fort was created with the mission of providing security and variety to cryptocurrency enthusiasts in Brazil. Founded in 2021 by Rafael Queiroz and Wagner Bertoluci, our store has already gained the trust of more than 4,000 customers, reaching the mark of more than 5,000 products sold. Our dedication to excellence and customer service is reflected in the absence of complaints, demonstrating a commitment to quality and safety in all aspects of our operation</p>
+                </div>
+                <div class="image anime-resale">
+                    <img src="/images/banner-init-screen.png" alt="hero">
+                </div>
+            </div>
+        </div>
+        <div class="container third" id="about">
+            <div class="padding">
+                <div class="content">
+                    <div class="carrosel" onclick="animation()">
+                        <div class="img-container first">
+                            <img src="/images/carrosel-1.png" alt="">
+                        </div>
+                        <div class="img-container second">
+                            <img src="/images/carrosel-2.png" alt="">
+                        </div>
+                    </div>
+                    <p class="anime anime-about">Cash Fort was created with the mission of providing security and variety to cryptocurrency enthusiasts in Brazil. Founded in 2021 by Rafael Queiroz and Wagner Bertoluci, our store has already gained the trust of more than 4,000 customers, reaching the mark of more than 5,000 products sold. Our dedication to excellence and customer service is reflected in the absence of complaints, demonstrating a commitment to quality and safety in all aspects of our operation</p>
+                </div>
+            </div>
+        </div>
+        <div class="container forth">
             <div class="padding">
                 <div class="content">
                     <h1 class="anime anime-resale">Official resale</h1>
@@ -28,14 +51,6 @@
                 </div>
                 <div class="image anime-resale">
                     <img src="/images/alt-de-verificacao-de-distintivo.png" alt="hero">
-                </div>
-            </div>
-        </div>
-        <div class="container" id="about">
-            <div class="padding">
-                <div class="content">
-                    <h1 class="anime anime-about">About Us</h1>
-                    <p class="anime anime-about">Cash Fort was created with the mission of providing security and variety to cryptocurrency enthusiasts in Brazil. Founded in 2021 by Rafael Queiroz and Wagner Bertoluci, our store has already gained the trust of more than 4,000 customers, reaching the mark of more than 5,000 products sold. Our dedication to excellence and customer service is reflected in the absence of complaints, demonstrating a commitment to quality and safety in all aspects of our operation</p>
                 </div>
             </div>
         </div>
@@ -62,17 +77,96 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="product">
-            <div class="content">
-                <h1 class="anime">Check our products</h1>
-                <button onclick="goto()">Products</button>
+        <div class="container part">
+            <div class="padding part">
+                <h1 class="anime anime-part">Costumers</h1>
+                <div class="partners">
+                    <div class="logo anime-part">
+                        <img src="/images/safepal.png" alt="safepal">
+                        <p>SafePal</p>
+                    </div>
+                    <div class="logo anime-part">
+                        <img src="/images/yubico.png" alt="secux">
+                        <p>Yubico</p>
+                    </div>
+                    <div class="logo anime-part">
+                        <img src="/images/Ledger.png" alt="secux">
+                        <p>Ledger</p>
+                    </div>
+                    <div class="logo anime-part">
+                        <img src="/images/Ellipal.png" alt="secux">
+                        <p>Ellipal</p>
+                    </div>
+                    <div class="logo anime-part">
+                        <img src="/images/Ellipal.png" alt="secux">
+                        <p>Ellipal</p>
+                    </div>
+                    <div class="logo anime-part">
+                        <img src="/images/Ellipal.png" alt="secux">
+                        <p>Ellipal</p>
+                    </div>
+                    <div class="logo anime-part">
+                        <img src="/images/Ellipal.png" alt="secux">
+                        <p>Ellipal</p>
+                    </div>
+                    <div class="logo anime-part">
+                        <img src="/images/Ellipal.png" alt="secux">
+                        <p>Ellipal</p>
+                    </div>
+                </div>
             </div>
+        </div>
             <script>
-                function goto(){
-                    window.location.href="/products"
+                setInterval(animation, 4000)
+
+                let carta1 = document.querySelector('.img-container.first');
+                let carta2 = document.querySelector('.img-container.second');
+                function animation(){
+                    let id = null;
+
+                    let pos = 0;
+                    clearInterval(id);
+                    id = setInterval(frame, 0.5);
+                    
+                    carta1.style.transition = "all 0.3s";
+                    carta2.style.transition = "all 0.3s";
+
+                    function frame() {        
+                        if (pos == 100) {
+                            clearInterval(id);
+                            let temp = carta1;
+                            carta1 = carta2;
+                            carta2 = temp;
+                        } else {
+                            pos++; 
+                            if(pos <= 33){
+                                carta1.style.zIndex = "2";
+                                carta2.style.zIndex = "1";
+                                carta2.style.marginTop = "-100%";
+                                carta1.style.marginTop = "100%";
+                                carta2.style.scale = "1";
+                                carta1.style.scale = "1";
+                                carta1.style.filter = "blur(2px)";
+                                carta2.style.filter = "blur(2px)";
+                                
+                            }
+                            if(pos > 33 && pos <= 66){
+                                carta2.style.scale = "1.05";
+                                carta1.style.scale = "0.95";
+                                carta1.style.zIndex = "1";
+                                carta2.style.zIndex = "2";
+                                carta1.style.filter = "blur(4px)";
+                                carta2.style.filter = "blur(0px)";
+                            }
+                            if(pos > 66){
+                                carta2.style.marginTop = "0";
+                                carta1.style.marginTop = "0";
+                            }
+                        }
+                    }
+                    
                 }
             </script>
-        </div>
     </main>
     <footer>
         <%- include ("partials/footer.ejs") %>
