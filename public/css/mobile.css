@@ -96,6 +96,14 @@ header .dropdown:hover .dropdown-content {
     right: 0;
     margin-left: 150px;
 }
+.container>video{
+    position: absolute;
+    z-index: -1;
+    filter:brightness(25%);
+    height: 100%;
+    right: 0;
+    margin-left: 150px;
+}
 .padding{
     display: flex;
     justify-content: center;

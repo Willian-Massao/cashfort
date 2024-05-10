@@ -15,7 +15,9 @@
                     <p class="anime anime-start">We offer excellent opportunities to do more with your cryptocurrencies.</p>
                 </div>
             </div>
-            <img src="https://www.cashfort.com.br/app/img/slideimg.jpeg" alt="">
+            <video id="vid" autoplay muted loop>
+                <source src="/images/cashfort.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="container second">
             <div class="padding">
@@ -143,6 +145,16 @@
                     scrolling(1, true);
                 }, 4000)
 
+                let carta1 
+                let carta2 
+
+                //esperar a pagina carregar
+                window.onload = function(){
+                    carta1 = document.getElementsByClassName('img-container first')[0];
+                    carta2 = document.getElementsByClassName('img-container second')[0];
+                }
+
+
                 function scrolling(idx, right){
                     let partners = document.getElementsByClassName('partners');
                     let scrollL = partners[idx].scrollLeft;
@@ -162,9 +174,6 @@
 
                     return partners[idx].childElementCount;
                 }
-
-                let carta1 = document.querySelector('.img-container.first');
-                let carta2 = document.querySelector('.img-container.second');
                 function animation(){
                     let id = null;
 

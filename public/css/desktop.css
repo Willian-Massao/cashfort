@@ -87,10 +87,19 @@ header .dropdown:hover .dropdown-content {
     box-shadow: 0 0 100px 100px #161617;
     height: fit-content;
 }
+.container.first .padding{
+    overflow: hidden;
+}
 .container>img{
     position: absolute;
     z-index: -1;
     filter:brightness(25%);
+}
+.container>video{
+    position: absolute;
+    z-index: -1;
+    filter:brightness(25%);
+    height: 100%;
 }
 .padding{
     display: flex;
