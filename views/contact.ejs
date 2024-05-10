@@ -4,6 +4,17 @@
     <%- include ("partials/head.ejs") %>
 </head>
 <body>
+    <alert>
+        <form action="" method="post">
+            <div class="button-exit">
+                <button type="button" onclick="formAppr(false)">X</button>
+            </div>
+            <input type="text" name="name" id="name" placeholder="Name">
+            <input type="email" name="email" id="email" placeholder="E-mail">
+            <textarea name="text" id="text" placeholder="Your text to us"></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </alert>
     <header>
         <%- include ("partials/header.ejs") %>
     </header>
@@ -17,7 +28,7 @@
         <div class="container second contact">
             <div class="padding contact">
                 <div class="con">
-                    <div class="con-card">
+                    <div class="con-card" onclick="formAppr(true, 0)">
                         <div class="info">
                             <h2>Brazil</h2>
                             <p>E-mail: atendimento@cashfort.com.br</p>
@@ -25,7 +36,7 @@
                         </div>
                         <img src="/images/brazil-banner.png" alt="">
                     </div>
-                    <div class="con-card">
+                    <div class="con-card" onclick="formAppr(true, 1)">
                         <div class="info">
                             <h2>United States</h2>
                             <p>E-mail: cashfort@cashfort.us</p>
@@ -43,6 +54,20 @@
                 </div>
             </div>
         </div>
+        <script>
+            function formAppr(show, type) {
+                let text= [
+                    "atendimento@cashfort.com.br",
+                    "cashfort@cashfort.us"
+                ]
+                if (show) {
+                    document.querySelector("alert").style.display = "flex";
+                    document.querySelector("#email").value = text[type];
+                } else {
+                    document.querySelector("alert").style.display = "none";
+                }
+            }
+        </script>
     </main>
     <footer>
         <%- include ("partials/footer.ejs") %>

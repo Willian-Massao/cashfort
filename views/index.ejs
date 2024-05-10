@@ -57,67 +57,111 @@
         <div class="container part">
             <div class="padding part">
                 <h1 class="anime anime-part">Partners</h1>
-                <div class="partners">
-                    <div class="logo anime-part">
-                        <img src="/images/safepal.png" alt="safepal">
-                        <p>SafePal</p>
+                <div class="scroling">
+                    <button class="scroll" onclick="scrolling(0,false)"><</button>
+                    <div class="partners">
+                        <div class="logo anime-part">
+                            <img src="/images/safepal.png" alt="safepal">
+                            <p>SafePal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/yubico.png" alt="secux">
+                            <p>Yubico</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ledger.png" alt="secux">
+                            <p>Ledger</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
                     </div>
-                    <div class="logo anime-part">
-                        <img src="/images/yubico.png" alt="secux">
-                        <p>Yubico</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ledger.png" alt="secux">
-                        <p>Ledger</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ellipal.png" alt="secux">
-                        <p>Ellipal</p>
-                    </div>
+                    <button class="scroll" onclick="scrolling(0,true)">></button>
                 </div>
             </div>
         </div>
         <div class="container part">
             <div class="padding part">
                 <h1 class="anime anime-part">Costumers</h1>
-                <div class="partners">
-                    <div class="logo anime-part">
-                        <img src="/images/safepal.png" alt="safepal">
-                        <p>SafePal</p>
+                <div class="scroling">
+                    <button class="scroll" onclick="scrolling(1,false)"><</button>
+                    <div class="partners">
+                        <div class="logo anime-part">
+                            <img src="/images/safepal.png" alt="safepal">
+                            <p>SafePal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/yubico.png" alt="secux">
+                            <p>Yubico</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ledger.png" alt="secux">
+                            <p>Ledger</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
+                        <div class="logo anime-part">
+                            <img src="/images/Ellipal.png" alt="secux">
+                            <p>Ellipal</p>
+                        </div>
                     </div>
-                    <div class="logo anime-part">
-                        <img src="/images/yubico.png" alt="secux">
-                        <p>Yubico</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ledger.png" alt="secux">
-                        <p>Ledger</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ellipal.png" alt="secux">
-                        <p>Ellipal</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ellipal.png" alt="secux">
-                        <p>Ellipal</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ellipal.png" alt="secux">
-                        <p>Ellipal</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ellipal.png" alt="secux">
-                        <p>Ellipal</p>
-                    </div>
-                    <div class="logo anime-part">
-                        <img src="/images/Ellipal.png" alt="secux">
-                        <p>Ellipal</p>
-                    </div>
+                    <button class="scroll" onclick="scrolling(1, true)">></button>
                 </div>
             </div>
         </div>
             <script>
                 setInterval(animation, 4000)
+                setInterval(()=>{
+                    scrolling(0, true);
+                    scrolling(1, true);
+                }, 4000)
+
+                function scrolling(idx, right){
+                    let partners = document.getElementsByClassName('partners');
+                    let scrollL = partners[idx].scrollLeft;
+
+
+                    if(right){
+                        partners[idx].scroll({ left: scrollL+225, behavior: "smooth" });
+                        if(scrollL > 225*(partners[idx].childElementCount-5)){
+                            partners[idx].scroll({ left: 0, behavior: "smooth" });
+                        }
+                    }else{
+                        partners[idx].scroll({ left: scrollL-225, behavior: "smooth" });
+                        if(scrollL == 0){
+                            partners[idx].scroll({ left: 225*(partners[idx].childElementCount), behavior: "smooth" });
+                        }
+                    }
+
+                    return partners[idx].childElementCount;
+                }
 
                 let carta1 = document.querySelector('.img-container.first');
                 let carta2 = document.querySelector('.img-container.second');
