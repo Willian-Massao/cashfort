@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const itens = require('./itens.json');
 // mapear todas as marcas que ah no arquivo itens.json mas não duplicar ignorando letras maiusculas
-const brand = itens.map((item) => item.Marca).filter((value, index, self) => self.indexOf(value) === index);
+const brand = itens.map((item) => item.marca).filter((value, index, self) => self.indexOf(value) === index);
 
 console.log(brand);
 
@@ -32,7 +32,7 @@ app.get('/product/:name', (req, res) => {
 app.get('/brand/:name', (req, res) => {
     const { name } = req.params;
     // filtrar os itens que tem a marca igual ao parametro passado
-    const item = itens.filter((item) => item.Marca === name);
+    const item = itens.filter((item) => item.marca === name);
     res.render('brand', {itens: item, marcas: brand});
 });
 

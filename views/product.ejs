@@ -21,86 +21,104 @@
                         <div class="stock sec">In stock</div>
                         <a class="buttons" href="/contact" target="_blank">Contact Us!</a>
                         <div class="sec compatibility">
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/marca.png" alt="">
+                            <% if(item.marca != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/marca.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Brand</p>
+                                        <p><%= item.marca %></p>
+                                    </div>
                                 </div>
-                                <div class="value">
-                                    <p class="title">Brand</p>
-                                    <p><%= item.Marca %></p>
+                            <% } %>
+                            <% if(item.compatibilidade != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/comp.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Compatibility</p>
+                                        <p><%= item.compatibilidade %></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/comp.png" alt="">
+                            <% } %>
+                            <% if(item["moedas suportadas"] != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/moedas.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Supported currencies</p>
+                                        <p><%= item["moedas suportadas"] %></p>
+                                    </div>
                                 </div>
-                                <div class="value">
-                                    <p class="title">Compatibility</p>
-                                    <p><%= item.Compatibilidade %></p>
+                            <% } %>
+                            <% if(item["blockchains suportadas"] != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/blockchain.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Supported blockchains</p>
+                                        <p><%= item["blockchains suportadas"] %></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/moedas.png" alt="">
+                            <% } %>
+                            <% if(item.conectividade != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/wifi.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Connectivity</p>
+                                        <p><%= item.conectividade %></p>
+                                    </div>
                                 </div>
-                                <div class="value">
-                                    <p class="title">Supported currencies</p>
-                                    <p><%= item["Moedas Suportadas"] %></p>
+                            <% } %>
+                            <% if(item.peso != ""){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/peso.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Weight</p>
+                                        <p><%= item.peso %></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/blockchain.png" alt="">
+                            <% } %>
+                            <% if(item.tamanho != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/altura.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Size</p>
+                                        <p><%= item.tamanho %></p>
+                                    </div>
                                 </div>
-                                <div class="value">
-                                    <p class="title">Supported blockchains</p>
-                                    <p><%= item["Blockchains Suportadas"] %></p>
+                            <% } %>
+                            <% if(item.bateria != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/bateria.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Battery</p>
+                                        <p><%= item.bateria %></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/wifi.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Connectivity</p>
-                                    <p><%= item.Conectividade %></p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/peso.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Weight</p>
-                                    <p><%= item.Peso %></p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/altura.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Size</p>
-                                    <p><%= item.Tamanho %></p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/bateria.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Battery</p>
-                                    <p><%= item.Bateria %></p>
-                                </div>
-                            </div>
-                            <div class="compa">
-                                <div class="icon">
-                                    <img src="/images/icon/manu.png" alt="">
-                                </div>
-                                <div class="value">
-                                    <p class="title">Handling</p>
-                                    <p><%= item.Manuseio %></p>
-                                </div>
+                            <% } %>
+                            <% if(item.manuseio != null){ %>
+                                <div class="compa">
+                                    <div class="icon">
+                                        <img src="/images/icon/manu.png" alt="">
+                                    </div>
+                                    <div class="value">
+                                        <p class="title">Handling</p>
+                                        <p><%= item.manuseio %></p>
+                                    </div>
+                            <% } %>
                             </div>
                         </div>
                     </div>
