@@ -84,7 +84,6 @@ header .dropdown:hover .dropdown-content {
     background-color: #161617;
 }
 .container.second{
-    box-shadow: 0 0 100px 100px #161617;
     height: fit-content;
 }
 .container.first .padding{
@@ -116,8 +115,9 @@ header .dropdown:hover .dropdown-content {
     flex-direction: row-reverse;
     align-items: start;
 }
-.container:nth-child(2n){
+.container:nth-child(2){
     flex-direction: row-reverse;
+    box-shadow: 0 0 100px 100px #161617;
 }
 .content h1{
     font-size: 40px;
@@ -471,10 +471,20 @@ footer .footer-sec{
 }
 .padding.itens{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.padding.itens .brand-tittle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.padding.itens .brand-tittle h2{
+    width: 100%;
+    padding-left: 30px;
 }
 .item-card{
     width: 250px;

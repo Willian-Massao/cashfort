@@ -85,7 +85,6 @@ header .dropdown:hover .dropdown-content {
     background-color: #161617;
 }
 .container.second{
-    box-shadow: 0 0 100px 100px #161617;
     height: fit-content;
 }
 .container>img{
@@ -113,8 +112,9 @@ header .dropdown:hover .dropdown-content {
     height: 100%;
     overflow: hidden;
 }
-.container:nth-child(2n){
+.container:nth-child(2){
     flex-direction: row-reverse;
+    box-shadow: 0 0 100px 100px #161617;
 }
 .content h1{
     font-size: large;
@@ -499,6 +499,12 @@ footer .footer-sec{
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.padding.itens .brand-tittle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .item-card{
     width: 250px;

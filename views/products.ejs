@@ -14,19 +14,26 @@
             </div>
             <img src="https://www.cashfort.com.br/app/img/slideimg.jpeg" alt="">
         </div>
-        <div class="container second itens">
-            <div class="padding itens">
-                <%itens.forEach(item=>{%>
-                    <a class="item-card" href="/product/<%= item.name %>">
-                        <div class="img-container">
-                            <img src="<%= item.foto %>" alt="">
-                        </div>
-                        <span class="name"><%= item.name.replaceAll('-',' ') %></span>
-                        <span class="price">Contact Us</span>
-                    </a>
-                <%})%>
+        <% marcas.forEach((marca)=>{ %>
+            <div class="container second itens">
+                <div class="padding itens">
+                    <div class="brand-tittle">
+                        <h2><%= marca %></h2>
+                    </div>
+                    <%itens.forEach(item=>{%>
+                        <% if(item.marca == marca){ %>
+                            <a class="item-card" href="/product/<%= item.name %>">
+                                <div class="img-container">
+                                    <img src="<%= item.foto %>" alt="">
+                                </div>
+                                <span class="name"><%= item.name.replaceAll('-',' ') %></span>
+                                <span class="price">Contact Us</span>
+                            </a>
+                        <% } %>
+                    <%})%>
+                </div>
             </div>
-        </div>
+        <% }) %>
     </main>
     <footer>
         <%- include ("partials/footer.ejs") %>

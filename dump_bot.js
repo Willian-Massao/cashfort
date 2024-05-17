@@ -11,7 +11,6 @@ const urls = [
     'https://www.cashfort.com.br/cold-wallets/dcent-card-wallet-eth-p17',
     'https://www.cashfort.com.br/cold-wallets/safepal-s1-p21',
     'https://www.cashfort.com.br/cold-wallets/coolwallet-s-p25',
-    'https://www.cashfort.com.br/cold-wallets/ellipal-mnemonics-metal-p31',
     'https://www.cashfort.com.br/cold-wallets/secux-w10-p32',
     'https://www.cashfort.com.br/cold-wallets/ledger-stax-lista-de-espera-p36',
     'https://www.cashfort.com.br/cold-wallets/ellipal-titan-mini-p37',
@@ -24,9 +23,7 @@ const urls = [
     'https://www.cashfort.com.br/yubico/security-key-nfc-yubico-p28',
     'https://www.cashfort.com.br/yubico/yubikey-5ci-p30',
     'https://www.cashfort.com.br/yubico/security-key-nfc-usb-c-yubico-p35',
-    'https://www.cashfort.com.br/acessorios/ellipal-mnemonics-metal-p31',
-    'https://www.cashfort.com.br/acessorios/cabo-otg-dcent-2-em-1-p38',
-    'https://www.cashfort.com.br/acessorios/case-safepal-s1-p42'
+    'https://www.cashfort.com.br/acessorios/cabo-otg-dcent-2-em-1-p38'
 ]
 let resjson = [];
 
@@ -55,8 +52,12 @@ async function checkStock(url){
             marca[idx][1] = marca[idx][1][0].toUpperCase() + marca[idx][1].slice(1);
         }
         //item += `"${marca[idx][0]}" : "${marca[idx][1]}",`;
-        infoTemp.type += marca[idx][0] + '\n';
-        infoTemp.value += marca[idx][1] + '\n';
+        if(marca[idx][0] == "marca"){
+            item += `"${marca[idx][0]}" : "${marca[idx][1]}",`;
+        }else{
+            infoTemp.type += marca[idx][0] + '\n';
+            infoTemp.value += marca[idx][1] + '\n';
+        }
     }
     console.log('\nTranslating data...');
     infoTemp.value = await translate(infoTemp.value, { from: 'pt', to: 'en' });
@@ -69,7 +70,12 @@ async function checkStock(url){
     item += `"foto" : "${fotos}",`
     item += `"url" : "${url}",`
     item += `"price" : "${price.replace('.', '').replace(',', '.')}",`
-    item += `"name": "${url.split('/')[url.split('/').length-1].split('-p')[0][0].toUpperCase()+url.split('/')[url.split('/').length-1].split('-p')[0].slice(1)}"}`;
+    let name = url.split('/')[url.split('/').length-1].split('-p')[0].split('-');
+    let finalName = '';
+    for(let idx in name){
+        finalName += name[idx][0].toUpperCase() + name[idx].slice(1) + '-';
+    }
+    item += `"name" : "${finalName.trim()}"}`
     //console.log(item);
     resjson.push(JSON.parse(item));
 }
