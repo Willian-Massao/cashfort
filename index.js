@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const itens = require('./itens.json');
 // mapear todas as marcas que ah no arquivo itens.json mas não duplicar ignorando letras maiusculas
-const brand = itens.map((item) => item.marca).filter((value, index, self) => self.indexOf(value) === index);
+let brand = itens.map((item) => item.marca).filter((value, index, self) => self.indexOf(value) === index);
+brand = brand.sort();
 
 console.log(brand);
 
