@@ -140,6 +140,7 @@ header .dropdown:hover .dropdown-content {
 }
 .container.second .padding .image{
     width: 100%;
+    height: 255px;
 }
 .container.third .padding .content{
     flex-direction: column;

@@ -139,10 +139,16 @@
             </div>
         </div>
             <script>
-                setInterval(animation, 4000)
                 setInterval(()=>{
-                    scrolling(0, true);
-                    scrolling(1, true);
+                    if(!document.hidden){
+                        animation()
+                    }
+                }, 4000)
+                setInterval(()=>{
+                    if(!document.hidden){
+                        scrolling(0, true);
+                        scrolling(1, true);
+                    }
                 }, 4000)
 
                 let carta1 
