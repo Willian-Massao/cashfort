@@ -5,12 +5,13 @@
 </head>
 <body>
     <alert>
-        <form action="" method="post">
+        <form action="/send" method="post">
             <div class="button-exit">
                 <button type="button" onclick="formAppr(false)">X</button>
             </div>
             <input type="text" name="name" id="name" placeholder="Name">
             <input type="email" name="email" id="email" placeholder="E-mail">
+            <input style="display: none;" type="email" name="target" id="target" placeholder="E-mail" readonly>
             <textarea name="text" id="text" placeholder="Your text to us"></textarea>
             <input type="submit" value="Send">
         </form>
@@ -62,7 +63,7 @@
                 ]
                 if (show) {
                     document.querySelector("alert").style.display = "flex";
-                    document.querySelector("#email").value = text[type];
+                    document.querySelector("#target").value = text[type];
                 } else {
                     document.querySelector("alert").style.display = "none";
                 }
